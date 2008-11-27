@@ -1,0 +1,38 @@
+
+<h1><%= render :partial => "scissors" %><%=  "Snips" %></h1>
+
+
+
+<% if @snips %>
+
+<table>
+  <tr>
+  <th class=name>Path</th>
+  <th class=view>Layout</th>
+  </tr>
+
+<% old_section = nil %>
+<% for snip in @snips %>
+  <% x = snip.path %>
+  <% section = x.split("/")[0] %>
+  <% x = x.split("/").slice(1,100).join("<span class=slash>/</span>") %>
+  <% x = "/" if x.blank? %>
+  <% if section != old_section %>
+    <tr><td class=name colspan=5><b><%= section %></b></td></tr>
+    <% old_section = section %>
+  <% end %>
+  <tr>
+    <td class=name><%= link_to "&nbsp;&nbsp;&nbsp;&nbsp;" + x, edit_snip_path(snip) %></td>
+    <td class=view><%= snip.layout %></td>
+    <td class=view><%= link_to "edit", edit_snip_path(snip) %></td>
+    <td class=view><% if snip.page? %><%= link_to "view", snip.absolute_path %><% end %></td>
+    <td class=destroy><%= link_to '&#215;', snip, :confirm => 'Are you sure you want to delete this?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+
+<br />
+
+

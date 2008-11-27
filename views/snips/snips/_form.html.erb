@@ -1,0 +1,16 @@
+<label>Path</label>
+<p><%= f.text_field :path %></p>
+<p></p>
+<label>Content</label>
+<p><%= f.text_area :raw_text %></p>
+
+
+<label>Layout</label>
+<p><%= f.select :layout, Snips.layouts %></p>
+
+<label>Render Type</label>
+<p> <%= f.select :render_type, ["text/html","markdown", "redcloth", "haml"] %></p>
+
+<% if @snip.page? %>
+<p><%= link_to "View Page", @snip.absolute_path %></p>
+<% end %>

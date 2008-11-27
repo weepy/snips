@@ -1,0 +1,12 @@
+<h2>Editting: <%=  @snip.path %></h2>
+<% form_for(@snip) do |f| %>
+  <%= f.text_area :raw_text %>
+  <br/>
+  <%= f.submit "Update" %>  
+  <button id=cancel>Cancel</button>
+  <a href='/snips'>Snips Admin</a>
+  <a href='/snips_logout'>Logout</a>
+  
+<% end %>
+
+

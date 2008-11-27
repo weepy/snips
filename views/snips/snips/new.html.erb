@@ -1,0 +1,10 @@
+<h1><%= render :partial => "scissors" %>New</h1>
+
+<%= error_messages_for :snip %>
+
+<% form_for(@snip) do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+  <%= f.submit "Create" %>
+<% end %>
+
+<%= link_to 'Back', snips_path %>

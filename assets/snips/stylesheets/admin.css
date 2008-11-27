@@ -1,0 +1,198 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+-------------------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+body { 
+  line-height: 1.5; 
+}
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+/* Remove annoying border on linked images. */
+a img { border: none; }
+
+
+ul {list-style-type: circle; margin: 1em;}
+
+pre { background: #eff;  display: inline; font-family: monospace; font-size: 0.8em; padding: 0; line-height: 1em;}
+
+body
+{ 
+  background-color: white;
+  background-image: url(/snips/images/scissors.jpg);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position: top right;
+  font-family: arial, sans;
+  font-size: 16px;
+  color:#333333;
+  margin: 20px;
+
+}
+
+
+th {
+  color: #4BA4A8;
+  font-weight: bold;
+}
+p {
+  margin-bottom: 1em;
+}
+h1 {
+  color:#4BA4A8;
+  text-shadow:0 0 3px #DDDDDD;
+  -x-system-font:none;
+  font-family:Georgia,"Times New Roman",Times,serif;
+  font-size:1.7em;
+  font-size-adjust:none;
+  font-stretch:normal;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:normal;
+  line-height:normal;
+  margin:0 0 10px 0px;
+  font-size: 3em;
+}
+
+.nav a {
+  padding-right: 2em;
+  border: 0px;
+  
+}
+
+#tab {
+  line-height: 1.2em;
+}
+
+#tab a {
+  padding: 0 1em;
+  vertical-align: top;
+  border: 0;
+  border-top: 1px solid #fcc;
+  border-bottom: 1px solid #fcc;
+}
+
+#tab .selected {
+  color: #4BA4A8;
+  font-size: 1.2em;
+  background: #fed;
+  padding: 0.1em 1em;
+}
+
+
+a:hover {
+  color: #4BA4A8;
+}
+h2 {
+-x-system-font:none;
+clear:both;
+font-family:Georgia,"Times New Roman",Times,serif;
+font-size:130%;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:normal;
+margin:20px 0 0 0px;
+padding:0;
+color:#111111;
+text-shadow:0 0 2px #CCCCCC;
+}
+
+tr {
+  background: white;
+}
+
+a {
+  color:#D17E62;
+  
+  text-decoration:none;
+}
+
+body #container a:hover, body #footer a:hover
+background-color:#FFFFDA;
+border-bottom-color:#DDDDDD;
+color:#CC3300;
+}
+a:hover {screen.css (line 1699)
+border-bottom-style:solid;
+border-bottom-width:1px;
+text-decoration:none;
+}
+
+label {
+  font-size:1em;
+  font-weight:normal;
+  letter-spacing:0.05em;
+  margin:0 0 10px;
+  padding:1px 2px;
+  text-transform:uppercase;
+}
+
+.snip_show {
+  border: 1px dotted #ddd;
+  padding: 1em;
+}
+
+textarea, input, select {
+  font-size: 0.8em;
+}
+textarea{
+  width: 500px;
+}
+.snip_show, .snip_show div {
+  background: #ffe;
+  width: 500px;
+}
+
+.name {
+  width: 20em;
+}
+
+.odd {
+  background: #efefef;
+}
+
+.destroy a {
+  color: red;
+}
+
+.view {
+  padding: 0 2em 0 0;
+}
+
+.float {
+  float: left;
+  
+}
+
+.clear {
+  clear:both;
+}

@@ -1,0 +1,32 @@
+.snip_edit, .snip_missing a { 
+  font-size: 12px; 
+  padding: 2px;
+  font-weight: bold; 
+  background: red; 
+  color: white; 
+}
+.snip { 
+  display: inline; 
+}
+
+.snip textarea {
+  font-size: 12px;
+  line-height: 1.5em;
+  font-family: courier, monospace;
+  
+}
+
+.snip_edit { 
+  position: absolute; 
+  cursor: pointer; 
+  right: 0px; 
+  top: 0px;
+  -moz-border-radius-topright: 10px;
+  line-height: 1em;
+  z-index: 5000;
+}
+
+.snip_edit:hover {
+  background: #000;
+}
+
