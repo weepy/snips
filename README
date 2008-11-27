@@ -1,0 +1,100 @@
+Snips
+=====
+
+Super::Simple::Content::Management
+
+Note if you are viewing this in plain text - please ignore the <pre> tags around the code snippets
+
+Install
+---
+
+* Add to routes.rb
+
+<pre>
+  map.snips
+</pre>
+
+* Make sure it's the last route added or it might clobber some of your other routes
+
+* Add the following to your layouts
+
+<pre>
+  <% if session[:snips] != nil %>
+  <%= stylesheet_link_tag '/snips/stylesheets/snips' %>
+  <%= javascript_include_tag '/snips/javascripts/jquery', '/snips/javascripts/form' ,'/snips/javascripts/snips' %>
+  <% end %>
+</pre>
+
+* run a migration with following:
+
+<pre>
+  create_table "snips", :force => true do |t|
+    t.string   "path"
+    t.text     "raw_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "layout"
+    t.string   "render_type", :limit => 50
+  end
+</pre>
+
+* Start your server
+
+Login
+---
+
+* Go to /snips
+* If you've set up authentication, you will be asked for your credentials
+* Once logged in you can add/edit snips
+* You can also edit the site inline once logged in - just click on the <div class="snip_edit" style="display: inline; position: relative">edit ✂ </div>
+
+
+Authentication
+----
+
+* To protect the snips admin add the following to environment.rb:
+
+<pre>
+::Snips.protect _username_, _password_
+</pre>
+
+Wiring up the root directory
+-----
+
+* Add the following to your routes (above the map.snips)
+
+<pre>
+map.root :controller => "snips/snips", :action => "render_snip", :path => "my-index-page"
+</pre>
+
+Render types
+---
+
+Snips supports the following
+
+* Plain text/HTML
+* Markdown/Textile via Redcloth3
+* ERB
+* HAML
+
+Be aware that ERB and HAML can run arbitrary ruby. 
+
+This can be very useful, but also be aware of the security implications.
+
+
+Advanced
+===
+
+Referencing other snips
+---
+
+You can reference other snips inside snips using the notation 
+
+<pre>{{snip-path}}</pre>
+
+* Be careful of cyclic references which will be fatal!
+
+Rendering a snip in your own code
+---
+
+You can simply do <pre>@snip.render_text</pre>
