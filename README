@@ -8,13 +8,6 @@ Note if you are viewing this in plain text - please ignore the <pre> tags around
 Install
 ---
 
-* Add to routes.rb
-
-<pre>
-  map.snips
-</pre>
-
-* Make sure it's the last route added or it might clobber some of your other routes
 
 * Add the following to your layouts
 
@@ -59,12 +52,12 @@ Authentication
 </pre>
 
 Wiring up the root directory
------
+------
 
 * Add the following to your routes (above the map.snips)
 
 <pre>
-map.root :controller => "snips/snips", :action => "render_snip", :path => "my-index-page"
+map.root :controller => "snips", :action => "render_snip", :path => "my-index-page"
 </pre>
 
 Render types
