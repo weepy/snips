@@ -12,5 +12,5 @@
 <p> <%= f.select :render_type, ["text/html","markdown", "redcloth", "haml"] %></p>
 
 <% if @snip.page? %>
-<p><%= link_to "View Page", @snip.absolute_path %></p>
+<p><%= link_to "View Page", "/pages" + @snip.absolute_path %></p>
 <% end %>

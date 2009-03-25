@@ -1,0 +1,30 @@
+
+<h1><%= render :partial => "scissors" %><%=  "Snips" %></h1>
+
+
+
+<% if @snips %>
+
+<table>
+  <tr>
+  <th class=name>Path</th>
+  <th class=view>Layout</th>
+  </tr>
+
+
+<% for snip in @snips %>
+  <tr>
+    <td class=name><%= link_to snip.path, edit_snip_path(snip) %></td>
+    <td class=view><%= snip.layout %></td>
+    <td class=view><%= link_to "edit", edit_snip_path(snip) %></td>
+    <td class=view><% if snip.page? %><%= link_to "view",  "/pages" + snip.absolute_path %><% end %></td>
+    <td class=destroy><%= link_to '&#215;', snip, :confirm => 'Are you sure you want to delete this?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+
+<br />
+
+

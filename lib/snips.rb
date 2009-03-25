@@ -33,21 +33,6 @@ module Snips
     
   end
   
-  #ROUTING
-  module Routing
-    def snips(opts={})
-      
-      with_options :controller => "snips/snips" do |db|
-        db.connect "/snips/logout", :action => "logout"
-        db.connect "/snips/documentation", :action => "documentation"
-      
-        db.resources :snips
-        db.connect "/*path", :action => "render_snip"
-      end
-      
-    end
-  end
-  
   #LAYOUTS
   @@layouts = [nil]
   
@@ -65,8 +50,6 @@ module Snips
       end
       
     @@layouts =  [nil] + layouts
-    
-      
   end
   
 
